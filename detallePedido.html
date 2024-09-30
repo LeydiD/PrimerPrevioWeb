@@ -28,8 +28,17 @@
     </header>
 
     <main>
-        <h2>Detalles del Pedido</h2>
-        <table id="order-details">
+        <section class="order-info">
+            <label>Fecha:</label>
+            <input type="text" id="order-date" readonly>
+            <label>Pedido número:</label>
+            <input type="text" id="order-number" readonly>
+            <label>Cliente:</label>
+            <input type="text" id="client-name" readonly>
+        </section>
+
+        <h2>Relación de Productos</h2>
+        <table id="product-details-table">
             <thead>
                 <tr>
                     <th>Concepto</th>
@@ -42,7 +51,10 @@
                 <!-- Aquí se mostrarán los detalles del pedido -->
             </tbody>
         </table>
-        <div id="total"></div>
+        <div class="total">
+            <span>Total:</span>
+            <span id="total-value">$0.00</span>
+        </div>
     </main>
 
     <script src="js/detallePedido.js"></script>

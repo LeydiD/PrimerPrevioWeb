@@ -1,11 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FakeStore App - Login</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    
+    <div class="login-container">
+        <h2>ShopOnline</h2>
+        <form id="login-form">
+            
+            <div class="label">
+                <label for="username">Username</label>
+            </div>
+            <input type="text" id="username" placeholder="Introduce tu usuario" required>
+            
+            <div class="label">
+                <label for="password">Password</label>
+            </div>
+
+            <input type="password" id="password" placeholder="Introduce tu contraseña" required>
+
+            <button id="ingresar" type="submit">Ingresar</button>
+        </form>
+        <div id="login-message"></div>
+        <div class="register-link">
+            <p><a href="#">Registrarse</a></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
 </body>
+
 </html>

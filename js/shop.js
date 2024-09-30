@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             button.addEventListener('click', (e) => {
                 const productId = e.target.getAttribute('data-product-id');
 
-                // Obtener producto de la API y añadirlo al carrito
+                // Obtener producto de la API
                 fetch(`https://fakestoreapi.com/products/${productId}`)
                     .then(res => res.json())
                     .then(product => {
@@ -51,6 +51,30 @@ document.addEventListener('DOMContentLoaded', () => {
         // Guardar el carrito actualizado en localStorage
         localStorage.setItem('cart', JSON.stringify(cart));
         alert(`${product.title} añadido al carrito.`);
+
+        // Ahora enviar el carrito a la API
+        sendCartToAPI(cart);
+    };
+
+    // Función para enviar el carrito a la API
+    const sendCartToAPI = (cart) => {
+        fetch('https://fakestoreapi.com/carts', {
+            method: "POST",
+            body: JSON.stringify({
+                userId: 5, // Cambia esto según el usuario actual
+                date: new Date().toISOString(), // Usa la fecha actual
+                products: cart.map(item => ({
+                    productId: item.id,
+                    quantity: item.quantity
+                }))
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => res.json())
+        .then(json => console.log('Carrito enviado a la API:', json))
+        .catch(error => console.error('Error al enviar el carrito a la API:', error));
     };
 
     // Obtener todos los productos al cargar la página

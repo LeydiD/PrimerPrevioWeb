@@ -1,3 +1,4 @@
+/* Estilo general */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,58 +7,70 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.user-info {
+.header-left h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header-left p {
+    margin: 0;
+    font-size: 14px;
+    color: gray;
+}
+
+.header-right {
     display: flex;
     align-items: center;
 }
 
-.user-info img {
-    width: 30px;
-    height: 30px;
-    margin-left: 15px;
-    cursor: pointer;
+.header-right p {
+    margin-right: 20px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
+.header-right a {
+    text-decoration: none;
+    color: #000;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
 }
 
-table, th, td {
-    border: 1px solid #ccc;
+.header-right img {
+    width: 20px;
+    margin-right: 5px;
 }
 
-th, td {
-    padding: 10px;
-    text-align: left;
-}
-
-button {
-    padding: 10px 20px;
-    margin-top: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #555;
-}
-
-.product {
-    margin: 20px;
+main {
+    padding: 20px;
 }
 
 h2 {
     text-align: center;
+    color: #333;
+}
+
+#orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#orders-table th, #orders-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+#orders-table th {
+    background-color: #f4f4f4;
+    color: #333;
 }

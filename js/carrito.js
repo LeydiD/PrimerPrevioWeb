@@ -1,48 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartTable = document.getElementById('cart-items');
-    const totalElement = document.getElementById('total');
-    let total = 0;
+    const username = localStorage.getItem('username') || 'Invitado';
+    document.getElementById('user-info').textContent = `Bienvenido: ${username}`;
 
-    // Mostrar nombre del usuario
-    const username = localStorage.getItem('username');
-    document.querySelector('.user-info p').textContent = `Bienvenido: ${username}`;
+    // Cargar productos del carrito desde localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    displayCartProducts(cart);
 
-    // Función para mostrar productos en el carrito
-    const displayCartItems = () => {
-        cartTable.innerHTML = ''; // Limpiar la tabla
-        total = 0;
+    function displayCartProducts(products) {
+        const ordersTableBody = document.querySelector('#orders-table tbody');
+        ordersTableBody.innerHTML = '';
 
-        cartItems.forEach(item => {
-            const subtotal = item.price * item.quantity;
-            total += subtotal;
-
+        products.forEach((product, index) => {
+            const subtotal = product.quantity * product.price;
             const row = `
                 <tr>
-                    <td>${item.title}</td>
-                    <td>${item.quantity}</td>
-                    <td>$${item.price}</td>
-                    <td>$${subtotal.toFixed(2)}</td>
+                    <td>${index + 1}</td>
+                    <td>${new Date().toLocaleDateString()}</td> <!-- Fecha de solicitud -->
+                    <td><a href="#" class="view-order" data-index="${index}">ver</a></td>
                 </tr>
             `;
-            cartTable.innerHTML += row;
+            ordersTableBody.innerHTML += row;
         });
 
-        totalElement.textContent = total.toFixed(2);
-    };
-
-    // Mostrar los productos del carrito al cargar la página
-    displayCartItems();
-
-
-    // function confirmPurchase() {
-    //     alert('Compra confirmada. ¡Gracias por su compra!');
-    //     localStorage.removeItem('cart');
-    //     window.location.href = 'shop.html';
-    // }
-    
-    // function seguirComprando() {
-    //     window.location.href = 'shop.html';
-    // }
-    
+        // Añadir evento de click para los enlaces "ver"
+        document.querySelectorAll('.view-order').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const index = e.target.getAttribute('data-index');
+                const selectedOrder = products[index];
+                // Guardar el pedido seleccionado en localStorage o pasarlo por URL
+                localStorage.setItem('selectedOrder', JSON.stringify(selectedOrder));
+                window.location.href = 'detallePedido.html'; // Redirigir a la página de detalles
+            });
+        });
+    }
 });

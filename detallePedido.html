@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FakeStore App - Carrito</title>
-    <link rel="stylesheet" href="css/carrito.css">
+    <title>Detalles del Pedido</title>
+    <link rel="stylesheet" href="css/detallePedido.css">
 </head>
 
 <body>
@@ -28,22 +28,24 @@
     </header>
 
     <main>
-        <h2>Relación de Pedidos</h2>
-        <table id="orders-table">
+        <h2>Detalles del Pedido</h2>
+        <table id="order-details">
             <thead>
                 <tr>
-                    <th>Número</th>
-                    <th>Fecha Solicitud</th>
-                    <th>Acciones</th>
+                    <th>Concepto</th>
+                    <th>Cantidad</th>
+                    <th>Valor</th>
+                    <th>Subtotal</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Aquí se mostrarán los pedidos del usuario -->
+                <!-- Aquí se mostrarán los detalles del pedido -->
             </tbody>
         </table>
+        <div id="total"></div>
     </main>
 
-    <script src="js/carrito.js"></script>
+    <script src="js/detallePedido.js"></script>
 </body>
 
 </html>

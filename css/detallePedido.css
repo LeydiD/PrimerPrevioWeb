@@ -1,0 +1,119 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header-left p {
+    margin: 0;
+    font-size: 12px;
+    color: #777;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right p {
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.header-right a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+.header-right a img {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+main {
+    padding: 20px;
+    background-color: white;
+    max-width: 900px;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    text-decoration: underline;
+}
+
+.table-container {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+tfoot {
+    font-weight: bold;
+    background-color: #f0f0f0;
+}
+
+input[type="text"] {
+    padding: 5px;
+    width: 95%;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #4a6ef1;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3a5ec1;
+}
+
+#total {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 20px;
+}

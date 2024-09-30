@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FakeStore App - Shop</title>
+    <link rel="stylesheet" href="css/shop.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <h1>Shop Online</h1>
+            <p>Anytime, Anywhere</p>
+        </div>
+        <div class="header-right">
+            <a href="carrito.html" id="cart-link" id="cart-icon">
+                <img src="img/carrito-de-compras.png" alt="Carrito">
+                <span>Carrito</span>
+            </a>
+            <a href="logout.html" id="logout-link">
+                <img src="img/logout-icon.png" alt="Salir">
+                <span>Salir</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <label for="search-bar">Filtro de búsqueda:</label>
+            <input type="text" id="search-bar" placeholder="Buscar productos...">
+            <button id="search-button">Buscar</button>
+        </div>
+
+        <h2>Productos</h2>
+        <div class="category-buttons">
+            <button class="category-btn" data-category="electronics">Electronics</button>
+            <button class="category-btn" data-category="jewelery">Jewelry</button>
+            <button class="category-btn" data-category="men's clothing">Men's clothing</button>
+            <button class="category-btn" data-category="women's clothing">Women's clothing</button>
+        </div>
+
+        <div id="product-list" class="product-list">
+            <!-- Aquí aparecerán los productos -->
+        </div>
+    </main>
+
+    <script src="js/shop.js"></script>
+</body>
+
+</html>

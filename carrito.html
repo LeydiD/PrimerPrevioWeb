@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/carrito.css">
+    <title>Carrito de Compras</title>
+</head>
+<body>
+    <header>
+        <h1>Shop Online</h1>
+        <div class="user-info">
+            <p>Bienvenido: John Doe</p>
+            <img src="carrito.png" id="cart-icon" alt="Carrito" />
+            <a href="salir.html">Salir</a>
+        </div>
+    </header>
+
+    <h2>Relación de Productos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Concepto</th>
+                <th>Cantidad</th>
+                <th>Valor</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+            <!-- Aquí se mostrarán los productos del carrito -->
+        </tbody>
+    </table>
+    <p>Total: $<span id="total"></span></p>
+    <button onclick="confirmPurchase()">Confirmar</button>
+    <button onclick="seguirComprando()">Seguir comprando</button>
+
+    <script src="js/carrito.js"></script>
+</body>
+</html>

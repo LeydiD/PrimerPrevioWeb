@@ -20,6 +20,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
             // Guardar el token y el username en localStorage
             localStorage.setItem('token', data.token);
             localStorage.setItem('username', username);
+            localStorage.setItem('userId', '2');
 
             // Redirigir a la página principal (shop.html)
             window.location.href = 'shop.html';

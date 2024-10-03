@@ -6,8 +6,10 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     padding: 20px;
+    /* background-image: url("https://i.pinimg.com/originals/bc/48/04/bc4804eb69f996621833655f53c3ce65.gif"); */
+    /* background-size: contain; */
 }
 
 header {
@@ -15,47 +17,83 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    padding: 25px;
 }
 
+.header-left{
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin-left: 2%;
+}
 .header-left h1 {
-    font-size: 24px;
-    color: #333;
+    font-size: 26px;
+    color: #000000;
+    margin: 0;
 }
 
 .header-left p {
+    margin-top: 0;
     font-size: 14px;
     color: #666;
 }
 
 .header-right {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 20px; /* Espaciado entre los elementos */
 }
 
 .header-right a {
+    display: flex;
+    flex-direction: column; /* Cambia la dirección a columna */
+    align-items: center; /* Centra horizontalmente */
     text-decoration: none;
     color: #000;
-    display: inline-table;
-    align-items: center;
+    text-align: center;
 }
 
 .header-right img {
-    width: 24px;
-    margin-right: 5px;
+    width: 55px; /* Tamaño ajustable */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-bottom: 5px; /* Espacio entre la imagen y el texto */
+}
+
+.header-right p {
+    font-size: 16px; /* Tamaño del texto ajustable */
+}
+
+main{
+    margin-left: 5%;
+    text-align: center;
+    width: 90%;
+    margin-right: 5%;
+}
+
+main h2{
+    color: #5032b9;
+    margin-bottom: 25px;
+}
+
+#labelFiltro{
+    margin-right: 15px;
 }
 
 .search-container {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 45px;
+    margin-left: 20px;
 }
 
 .search-container input {
     flex-grow: 1;
-    padding: 10px;
+    padding: 7px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     margin-right: 10px;
+    background-color: #d8d6d6;
 }
 
 .search-container button {
@@ -72,17 +110,24 @@ header {
 }
 
 .category-buttons {
+    font-size: 100%;
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
 }
 
 .category-btn {
-    padding: 10px 20px;
+    width: 24%;
+    padding: 20px 20px;
     background-color: #ccc;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
+    font-size: 90%;
+}
+
+.info{
+    display: flex;
 }
 
 .category-btn:hover {
@@ -91,21 +136,32 @@ header {
 
 .product-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
 }
 
 .product-card {
-    background-color: white;
-    padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding-bottom: 15px;
     text-align: center;
+    height: auto; /* Altura fija para las tarjetas */
+    display: flex;
+    flex-direction: column; /* Permite alinear elementos verticalmente */
+    justify-content: space-between; /* Espacio entre los elementos */
 }
 
 .product-card img {
     max-width: 100%;
-    border-radius: 10px;
+    max-height: 200px; /* Altura fija para las imágenes */
+    object-fit: contain; /* Mantiene la proporción de la imagen */
+    /* background-color: #8484842d; */
+}
+
+.product-card:hover {
+    transform: translateY(-10px); /* Mueve la tarjeta hacia arriba */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
 }
 
 .product-card h3 {
@@ -119,18 +175,21 @@ header {
 }
 
 .product-card .price {
-    font-size: 18px;
-    color: #10963a;
-    margin: 10px 0;
+    margin-left: 10%;
+    font-size: 100%;
+    width: 60%;
+    background-color: #9effd891;
+    padding: 10px 20px;
+    font-weight: bold;
 }
 
 .add-button {
-    background-color: orange;
-    color: white;
-    padding: 10px 20px;
+    font-size: 100%;
+    background-color: rgb(255, 98, 0);
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    width: 20%;
+    font-weight: bold;
 }
 
 .add-button:hover {

@@ -1,76 +1,139 @@
-/* Estilo general */
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
-    padding: 10px 20px;
+    padding: 20px 30px;
+    background-color: #f2f2f2;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten en múltiples líneas */
+}
+
+.header-left {
+    text-align: center;
 }
 
 .header-left h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 26px;
+    color: #000000;
 }
 
 .header-left p {
-    margin: 0;
     font-size: 14px;
-    color: gray;
+    color: #666;
 }
 
 .header-right {
     display: flex;
     align-items: center;
+    gap: 30px;
 }
 
 .header-right p {
-    margin-right: 20px;
+    font-size: 20px;
+    color: #000000; 
+    font-weight: bold;
 }
 
 .header-right a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-decoration: none;
     color: #000;
-    margin-left: 10px;
-    display: flex;
-    align-items: center;
+    text-align: center;
 }
 
 .header-right img {
-    width: 20px;
-    margin-right: 5px;
+    width: 55px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.header-right a:hover {
+    color: #4713f0;
 }
 
 main {
-    padding: 20px;
+    padding: 30px;
 }
 
 h2 {
     text-align: center;
-    color: #333;
+    color: #4d25cf;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
 }
 
 #orders-table {
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
     margin: 20px auto;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-#orders-table th, #orders-table td {
-    padding: 10px;
+#orders-table a {
+    text-decoration: underline;
+}
+
+#orders-table a:hover {
+    color: #4d25cf;
+    cursor: pointer;
+}
+
+#orders-table th,
+#orders-table td {
+    padding: 12px;
     text-align: center;
     border: 1px solid #ddd;
 }
 
 #orders-table th {
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #523cc1;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#orders-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#orders-table tr:hover {
+    background-color: #adadadc5;
+    transition: background-color 0.3s;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .header-left h1 {
+        font-size: 22px; /* Reducir el tamaño del título */
+    }
+
+    .header-left p {
+        font-size: 12px; /* Reducir el tamaño del texto */
+    }
+
+    .header-right p {
+        font-size: 16px; /* Reducir el tamaño del texto */
+    }
+
+    .header-right img {
+        width: 45px; /* Reducir el tamaño de la imagen */
+    }
+
+    header {
+        padding: 15px; /* Reducir el padding del header */
+    }
 }

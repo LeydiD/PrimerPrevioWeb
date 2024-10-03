@@ -12,9 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="product-card">
                     <img src="${product.image}" alt="${product.title}">
                     <h3>${product.title}</h3>
-                    <p>${product.description}</p>
-                    <div class="price">$${product.price}</div>
-                    <button class="add-button" data-product-id="${product.id}">Add</button>
+                    <div class="info">
+                        <div class="price">$${product.price}</div>
+                        <button class="add-button" data-product-id="${product.id}">Add</button>
+                    </div>
                 </div>
             `;
             productList.innerHTML += productCard;

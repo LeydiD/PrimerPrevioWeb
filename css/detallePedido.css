@@ -1,74 +1,103 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
     padding: 20px;
-    background-color: #f9f9f9;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
-    padding: 10px 20px;
-    border-bottom: 2px solid #ccc;
+    padding: 20px 30px;
+    background-color: #a182ff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 .header-left h1 {
     margin: 0;
+    font-size: 28px;
+    color: #480a9f;
 }
 
 .header-left p {
-    margin: 0;
-    font-size: 12px;
-    color: #888;
+    font-size: 14px;
+    color: #ffffff;
 }
 
 .header-right {
     display: flex;
     align-items: center;
+    gap: 20px;
 }
 
 .header-right p {
-    margin-right: 20px;
+    font-size: 18px;
+    color: #fff;
     font-weight: bold;
 }
 
 .header-right a {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-left: 15px;
     text-decoration: none;
-    color: #000;
+    color: #fff;
 }
 
 .header-right img {
-    width: 24px;
-    height: 24px;
-    margin-right: 5px;
+    width: 40px;
+    height: auto;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
 .order-info {
     display: flex;
-    gap: 10px;
+    justify-content: space-around;
     margin: 20px 0;
+    padding: 15px;
+    background-color: #e7e9fa;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .order-info label {
     font-weight: bold;
-    margin-right: 5px;
+    color: #333;
 }
 
 .order-info input {
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 150px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+.order-info input:focus {
+    border-color: #4a4ae2;
 }
 
 h2 {
     text-align: center;
-    color: #333;
+    color: #594ae2;
+    margin-top: 20px;
+    font-size: 24px;
 }
 
 table {
@@ -79,11 +108,13 @@ table {
 }
 
 thead {
-    background-color: #f0f0f0;
+    background-color: #6e56c7;
+    color: white;
 }
 
-th, td {
-    padding: 10px;
+th,
+td {
+    padding: 12px;
     border: 1px solid #ddd;
     text-align: center;
 }
@@ -94,4 +125,77 @@ th, td {
     padding: 10px;
     margin-top: 10px;
     font-weight: bold;
+    font-size: 20px;
+    color: #333;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.button-container button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s;
+    margin-left: 10px;
+}
+
+#update-button {
+    background-color: #008CBA;
+    color: white;
+}
+
+#confirm-button {
+    background-color: #008CBA;
+    color: white;
+}
+
+#continue-button {
+    background-color: #008CBA;
+    color: white;
+}
+
+.button-container button:hover {
+    opacity: 0.9;
+}
+
+button a{
+    color: white;
+    text-decoration: none;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    .order-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .order-info label {
+        margin-bottom: 5px;
+    }
+
+    .order-info input {
+        width: 100%;
+    }
+
+    .button-container {
+        flex-direction: row; /* Cambia a fila en pantallas pequeñas */
+        justify-content: center; /* Centra los botones */
+        flex-wrap: wrap; /* Permite que los botones se ajusten si hay poco espacio */
+    }
+
+    .button-container button {
+        margin-left: 5px; /* Espacio reducido entre botones */
+        margin-top: 10px; /* Espacio entre botones en columna */
+    }
 }
